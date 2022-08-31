@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <section class="backdrop is-hidden" data-modal>
+      <section class="modal">
+        <button class="modal-close-btn" type="button" data-modal-close>
+          <svg class="button-cross" width="11" height="11">
+            <use href="./images/icons.svg#button-cross"></use>
+          </svg>
+        </button>
+      </section>
+    </section>
     <header class="main-header">
       <div class="container flexbox">
         <a class="link-logo" href="./index.html"><span class="link-logo1">Web</span>Studio</a>
@@ -60,7 +69,7 @@
             Ефективні рішення для <br />
             вашого бізнесу
           </h1>
-          <button class="hero-btn" type="button">Замовити послугу</button>
+          <button class="hero-btn" type="button" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <section class="benefits section">
@@ -119,28 +128,37 @@
           <h2 class="h2-title">Чим ми займаємося</h2>
           <ul class="occupation-list list">
             <li class="occupation-list-item">
+              <div class="occupation-title-backdrop">
+                <p class="occupation-title">Десктопні додатки</p>
+              </div>
               <img
                 class="occupation-list-img"
                 src="./images/box1.jpg"
-                alt="Ноутбук"
+                alt="Десктопні додатки"
                 width="370"
                 height="294"
               />
             </li>
             <li class="occupation-list-item">
+              <div class="occupation-title-backdrop">
+                <p class="occupation-title">Мобільні додатки</p>
+              </div>
               <img
                 class="occupation-list-img"
                 src="./images/box2.jpg"
-                alt="Мобільный телефон"
+                alt="Мобільні додатки"
                 width="370"
                 height="294"
               />
             </li>
             <li class="occupation-list-item">
+              <div class="occupation-title-backdrop">
+                <p class="occupation-title">Дизайнерські рішення</p>
+              </div>
               <img
                 class="occupation-list-img"
                 src="./images/box3.jpg"
-                alt="Планшет"
+                alt="Дизайнерські рішення"
                 width="370"
                 height="294"
               />
@@ -420,5 +438,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
