@@ -164,7 +164,8 @@ img {
   left: 0;
   bottom: -1px;
   width: 100%;
-  border: 4px solid var(--accent-color);
+  height: 4px;
+  background-color: var(--accent-color);
   border-radius: 2px;
 }
 .mailto,
@@ -224,8 +225,8 @@ img {
 }
 .modal-close-btn {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 8px;
+  right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -382,6 +383,7 @@ img {
 }
 .team-card-txt {
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 .team-item {
   flex-basis: calc((100% - 90px) / 4);
@@ -409,7 +411,6 @@ img {
 .team-card-social {
   justify-content: center;
   gap: 10px;
-  padding-bottom: 30px;
 }
 .team-card-social-item {
   display: flex;
@@ -570,7 +571,14 @@ img {
   justify-content: center;
   margin-bottom: 50px;
 }
+.portfolio-btn.active {
+  color: var(--act-btn-txt-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%),
+    0px 2px 2px rgb(0 0 0 / 12%);
+}
 .portfolio-btn {
+  cursor: pointer;
   padding-top: 6px;
   padding-right: 22px;
   padding-bottom: 6px;
@@ -622,13 +630,13 @@ img {
 }
 .portfolio-img-txt {
   position: absolute;
+  display: flex;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
-  padding-top: 63px;
-  padding-bottom: 63px;
   padding-left: 24px;
   padding-right: 24px;
   font-weight: 400;
