@@ -23,6 +23,8 @@
   --clients-icon-act-color: #2196f3;
   --backdrop-bgc-color: rgba(0, 0, 0, 0.2);
   --modal-bg-color: #ffffff;
+  --portfolio-overlay-txt-color: #ffffff;
+  --transition-rules: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -131,7 +133,7 @@ img {
 }
 .nav-link {
   color: var(--main-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-rules);
 }
 .mailto,
 .telephone,
@@ -139,7 +141,7 @@ img {
 .team-role,
 .portfolio-txt {
   color: var(--secondary-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-rules);
 }
 .nav-link:hover,
 .mailto:hover,
@@ -191,52 +193,50 @@ img {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0%);
-}
 .backdrop {
   z-index: 999999999;
   position: fixed;
   left: 0;
-  right: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: var(--backdrop-bgc-color);
   opacity: 1;
   visibility: visible;
   transform: scale(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-rules), opacity var(--transition-rules),
+    visibility var(--transition-rules);
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0%);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
   width: 528px;
   height: 581px;
   background-color: var(--modal-bg-color);
 }
 .modal-close-btn {
-  margin-left: auto;
-  margin-right: 14px;
-  margin-top: 14px;
-  display: flex;
+  position: absolute;
+  top: 14px;
+  right: 14px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--act-btn-txt-color);
   cursor: pointer;
+  display: flex;
   justify-content: center;
   align-items: center;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-rules), opacity var(--transition-rules),
+    transform var(--transition-rules), visibility var(--transition-rules);
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus {
@@ -287,8 +287,7 @@ img {
   font-size: 16px;
   line-height: 1.89;
   letter-spacing: 0.06em;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-rules), background-color var(--transition-rules);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -427,8 +426,7 @@ img {
   justify-content: center;
   align-items: center;
   color: var(--team-social-link-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-rules), color var(--transition-rules);
 }
 .team-link:hover,
 .team-link:focus {
@@ -456,8 +454,7 @@ img {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--transition-rules), color var(--transition-rules);
 }
 .clients-item-svg:hover,
 .clients-item-svg:focus {
@@ -506,7 +503,7 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-rules);
 }
 .footer-address {
   color: var(--footer-text-color);
@@ -514,7 +511,7 @@ img {
 .footer-mailto,
 .footer-tel {
   color: rgba(255, 255, 255, 0.6);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-rules);
 }
 .footer-address:hover,
 .footer-mailto:hover,
@@ -556,7 +553,7 @@ img {
   justify-content: center;
   align-items: center;
   color: var(--footer-text-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-rules);
 }
 .join-link:hover,
 .join-link:focus {
@@ -587,8 +584,8 @@ img {
   border: 0;
   border-radius: 4px;
   background-color: var(--portfolio-btn-color);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-rules), background-color var(--transition-rules),
+    color var(--transition-rules);
 }
 .porfolio-filter-list:not(:last-child) {
   margin-right: 8px;
@@ -617,16 +614,40 @@ img {
 .portfolio-item-link {
   display: block;
   text-decoration: none;
+  transition: box-shadow var(--transition-rules);
 }
-.portfolio-img-cover {
+.portfolio-img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-img-txt {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 294px;
+  height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--portfolio-overlay-txt-color);
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform var(--transition-rules);
 }
 .portfolio-item-link:hover,
 .portfolio-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio-item-link:hover .portfolio-img-txt,
+.portfolio-item-link:focus .portfolio-img-txt {
+  transform: translateY(0);
 }
 .portfolio-card-txt {
   padding: 20px;
